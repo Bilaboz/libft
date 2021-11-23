@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcarles <rcarles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/22 18:04:19 by rcarles           #+#    #+#             */
-/*   Updated: 2021/11/23 17:58:12 by rcarles          ###   ########.fr       */
+/*   Created: 2021/11/23 21:00:50 by rcarles           #+#    #+#             */
+/*   Updated: 2021/11/23 21:12:02 by rcarles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	char	*p1;
-	char	*p2;
+	size_t	i;
+	size_t	j;
 
-	p1 = (char *) dest;
-	p2 = (char *) src;
-	while (size--)
-		p1[size] = p2[size];
-	return (dest);
+	i = 0;
+	j = 0;
+	while (dst[i])
+		i++;
+
 }
