@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcarles <rcarles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 20:28:55 by rcarles           #+#    #+#             */
-/*   Updated: 2021/11/24 14:08:46 by rcarles          ###   ########.fr       */
+/*   Created: 2021/11/24 17:38:01 by rcarles           #+#    #+#             */
+/*   Updated: 2021/11/24 17:50:26 by rcarles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
-	unsigned int	i;
-	int				sign;
-	long int		result;
+	size_t	len;
+	size_t	i;
+	char	*result;
 
 	i = 0;
-	sign = 1;
-	result = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || (str[i] == 32))
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	len = ft_strlen(s);
+	result = malloc(sizeof(*result) * (len + 1));
+	if (!result)
+		return (NULL);
+	while (i < len)
 	{
-		if (str[i] == '-')
-			sign *= -1;
+		result[i] = (*f)(i, s[i]);
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		result = result * 10 + (str[i] - '0');
-		i++;
-	}
-	return (result * sign);
+	result[i] = '\0';
+	return (result);
 }

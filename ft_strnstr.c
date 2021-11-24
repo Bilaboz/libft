@@ -19,7 +19,7 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 
 	i = 0;
 	j = 0;
-	if (!to_find || to_find[0] == '\0')
+	if (to_find[0] == '\0')
 		return ((char *) str);
 	while (str[i] && i < len)
 	{
