@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcarles <rcarles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 21:00:50 by rcarles           #+#    #+#             */
-/*   Updated: 2021/11/24 11:30:04 by rcarles          ###   ########.fr       */
+/*   Created: 2021/11/24 12:42:17 by rcarles           #+#    #+#             */
+/*   Updated: 2021/11/24 12:50:44 by rcarles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+void	*ft_calloc(size_t nmenb, size_t size)
 {
+	char	*result;
 	size_t	i;
-	size_t	j;
-	size_t	src_len;
-	size_t	dst_len;
 
 	i = 0;
-	j = 0;
-	src_len = ft_strlen(src);
-	dst_len = ft_strlen(dst);
-	if (size <= dst_len)
-		return (src_len + size);
-	while (dst[i])
-		i++;
-	while (src[j] && (i + j) < (size - 1))
+	if (!nmenb || !size)
+		return (NULL);
+	result = malloc(nmenb * size);
+	if (!result)
+		return (NULL);
+	while (i < nmenb * size)
 	{
-		dst[i + j] = src[j];
-		j++;
+		result[i] = 0;
+		i++;
 	}
-	dst[i + j] = '\0';
-	return (src_len + dst_len);
+	return ((void *) result);
 }
