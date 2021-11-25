@@ -6,7 +6,7 @@
 /*   By: rcarles <rcarles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 14:49:23 by rcarles           #+#    #+#             */
-/*   Updated: 2021/11/24 15:24:19 by rcarles          ###   ########.fr       */
+/*   Updated: 2021/11/25 17:01:49 by rcarles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,11 @@ char	*ft_strtrim(const char *s1, const char *set)
 	while (char_is_in_set(s1[i], set))
 		i--;
 	end_idx = i + 1;
+	if ((end_idx - start_idx) < 0)
+		start_idx = 0;
 	result = malloc(sizeof(*result) * (end_idx - start_idx + 1));
+	if (!result)
+		return (NULL);
 	ft_strlcpy(result, (char *) &s1[start_idx], end_idx - start_idx + 1);
 	return (result);
 }
