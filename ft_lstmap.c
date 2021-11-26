@@ -6,7 +6,7 @@
 /*   By: rcarles <rcarles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 15:32:51 by rcarles           #+#    #+#             */
-/*   Updated: 2021/11/25 16:13:49 by rcarles          ###   ########.fr       */
+/*   Updated: 2021/11/26 15:52:52 by rcarles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*result;
 	t_list	*elem;
 
+	if (!lst)
+		return (NULL);
 	result = ft_lstnew((*f)(lst->content));
 	if (!result)
 		return (NULL);

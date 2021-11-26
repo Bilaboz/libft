@@ -6,7 +6,7 @@
 /*   By: rcarles <rcarles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 14:24:27 by rcarles           #+#    #+#             */
-/*   Updated: 2021/11/24 14:47:42 by rcarles          ###   ########.fr       */
+/*   Updated: 2021/11/26 15:53:28 by rcarles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	size_t	s2_len;
 	char	*result;
 
+	if (!s1 || !s2)
+		return (NULL);
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);
 	result = malloc(sizeof(*result) * (s1_len + s2_len + 1));

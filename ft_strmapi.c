@@ -6,7 +6,7 @@
 /*   By: rcarles <rcarles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 17:38:01 by rcarles           #+#    #+#             */
-/*   Updated: 2021/11/24 17:50:26 by rcarles          ###   ########.fr       */
+/*   Updated: 2021/11/26 15:52:04 by rcarles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 	size_t	i;
 	char	*result;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	len = ft_strlen(s);
 	result = malloc(sizeof(*result) * (len + 1));

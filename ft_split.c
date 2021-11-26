@@ -6,7 +6,7 @@
 /*   By: rcarles <rcarles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 15:32:37 by rcarles           #+#    #+#             */
-/*   Updated: 2021/11/24 18:47:00 by rcarles          ###   ########.fr       */
+/*   Updated: 2021/11/26 15:55:52 by rcarles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,14 +55,14 @@ static char	*get_str(const char *s, char c)
 char	**ft_split(const char *s, char c)
 {
 	char	**result;
-	int		strs_count;
 	int		i;
 	int		j;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	j = 0;
-	strs_count = count_strs(s, c);
-	result = malloc(sizeof(*result) * (strs_count + 1));
+	result = malloc(sizeof(*result) * (count_strs(s, c) + 1));
 	if (!result)
 		return (NULL);
 	while (s[i])
@@ -77,6 +77,6 @@ char	**ft_split(const char *s, char c)
 		}
 		i++;
 	}
-	result[strs_count] = 0;
+	result[j] = 0;
 	return (result);
 }

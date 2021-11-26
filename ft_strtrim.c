@@ -6,7 +6,7 @@
 /*   By: rcarles <rcarles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 14:49:23 by rcarles           #+#    #+#             */
-/*   Updated: 2021/11/25 17:01:49 by rcarles          ###   ########.fr       */
+/*   Updated: 2021/11/26 15:48:58 by rcarles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ char	*ft_strtrim(const char *s1, const char *set)
 	int		end_idx;
 	char	*result;
 
+	if (!s1)
+		return (NULL);
 	i = 0;
 	while (char_is_in_set(s1[i], set))
 		i++;

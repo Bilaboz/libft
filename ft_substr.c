@@ -6,7 +6,7 @@
 /*   By: rcarles <rcarles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 13:34:04 by rcarles           #+#    #+#             */
-/*   Updated: 2021/11/26 11:48:27 by rcarles          ###   ########.fr       */
+/*   Updated: 2021/11/26 15:48:05 by rcarles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	size_t	i;
 	char	*result;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	result = malloc(sizeof(*result) * (len + 1));
 	if (!result)
