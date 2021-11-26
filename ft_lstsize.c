@@ -6,7 +6,7 @@
 /*   By: rcarles <rcarles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 14:05:12 by rcarles           #+#    #+#             */
-/*   Updated: 2021/11/25 14:18:28 by rcarles          ###   ########.fr       */
+/*   Updated: 2021/11/26 16:04:19 by rcarles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ int	ft_lstsize(t_list *lst)
 		head = head->next;
 		size++;
 	}
-	return(size);
+	return (size);
 }
