@@ -34,8 +34,4 @@ fclean: clean
 
 re: fclean all
 
-so:
-	clang -nostartfiles -fPIC $(CFLAGS) $(SRCS) ${BONUS_SRCS}
-	clang -nostartfiles -shared -o libft.so $(OBJS) ${BONUS_OBJS}
-
 .PHONY: all clean fclean re bonus
