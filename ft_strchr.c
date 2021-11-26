@@ -6,7 +6,7 @@
 /*   By: rcarles <rcarles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 15:56:58 by rcarles           #+#    #+#             */
-/*   Updated: 2021/11/23 16:13:12 by rcarles          ###   ########.fr       */
+/*   Updated: 2021/11/26 18:47:02 by rcarles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ char	*ft_strchr(const char *str, int c)
 	int	i;
 
 	i = 0;
-	while (str[i] || str[i] == c)
+	while (str[i] || str[i] == (unsigned char) c)
 	{
-		if (str[i] == c)
+		if (str[i] == (unsigned char) c)
 			return ((char *) &str[i]);
 		i++;
 	}

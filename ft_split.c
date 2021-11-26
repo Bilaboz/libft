@@ -6,7 +6,7 @@
 /*   By: rcarles <rcarles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 15:32:37 by rcarles           #+#    #+#             */
-/*   Updated: 2021/11/26 15:55:52 by rcarles          ###   ########.fr       */
+/*   Updated: 2021/11/26 22:15:11 by rcarles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,19 @@ static int	count_strs(const char *s, char c)
 	int	i;
 	int	count;
 
-	i = 1;
+	i = 0;
 	count = 0;
 	while (s[i])
 	{
-		if (s[i] == c && s[i - 1] != c)
+		while (s[i] == c && s[i])
+			i++;
+		if (s[i] != '\0')
+		{
 			count++;
-		i++;
+			while (s[i] && s[i] != c)
+				i++;
+		}
 	}
-	if (s[i - 1] != c && s[i - 1])
-		count++;
 	return (count);
 }
 

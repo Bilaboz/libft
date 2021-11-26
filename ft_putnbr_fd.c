@@ -6,7 +6,7 @@
 /*   By: rcarles <rcarles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 18:14:53 by rcarles           #+#    #+#             */
-/*   Updated: 2021/11/24 18:28:51 by rcarles          ###   ########.fr       */
+/*   Updated: 2021/11/26 18:49:04 by rcarles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_putnbr_fd(int n, int fd)
 		n *= -1;
 		write(fd, "-", 1);
 	}
-	if (n > 10)
+	if (n > 9)
 	{
 		ft_putnbr_fd(n / 10, fd);
 		ft_putnbr_fd(n % 10, fd);
