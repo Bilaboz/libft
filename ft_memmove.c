@@ -6,7 +6,7 @@
 /*   By: rcarles <rcarles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 18:18:45 by rcarles           #+#    #+#             */
-/*   Updated: 2021/11/24 14:10:40 by rcarles          ###   ########.fr       */
+/*   Updated: 2021/11/26 12:00:16 by rcarles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memmove(void *dest, const void *src, size_t size)
 	char	*s;
 	size_t	i;
 
+	if (!dest && !src)
+		return (NULL);
 	i = 0;
 	d = (char *)dest;
 	s = (char *)src;

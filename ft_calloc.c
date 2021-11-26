@@ -6,7 +6,7 @@
 /*   By: rcarles <rcarles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 12:42:17 by rcarles           #+#    #+#             */
-/*   Updated: 2021/11/25 16:41:23 by rcarles          ###   ########.fr       */
+/*   Updated: 2021/11/26 11:52:35 by rcarles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,11 @@ void	*ft_calloc(size_t nmenb, size_t size)
 
 	i = 0;
 	if (!nmenb || !size)
-		return (NULL);
+	{
+		result = malloc(sizeof(char) * 1);
+		result[0] = '\0';
+		return (result);
+	}
 	result = malloc(nmenb * size);
 	if (!result)
 		return (NULL);
