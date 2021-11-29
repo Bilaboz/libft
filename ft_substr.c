@@ -14,7 +14,6 @@
 
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	size_t	i;
 	size_t	size;
 	char	*result;
 
@@ -26,7 +25,6 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 		result[0] = '\0';
 		return (result);
 	}
-	i = 0;
 	size = ft_strlen(&s[start]);
 	if (size > len)
 		size = len;
